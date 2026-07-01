@@ -257,7 +257,3 @@ src/
 │  └─ config.ts                # env config
 └─ components/icons.tsx        # inline SVG icons
 ```
-
----
-
-<sub>Built for the Smart Scheduler AI Agent assignment.</sub>
