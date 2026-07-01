@@ -215,24 +215,6 @@ Use **headphones** so the mic doesn't echo the agent's voice.
 
 ---
 
-## 🎥 Demo video script (2–3 min)
-
-1. **Intro (15s):** "This is Kairos, a voice scheduling agent — Gemini Live +
-   Google Calendar on Next.js/Vercel." Show the home screen.
-2. **Basic booking (40s):** Tap mic → "Schedule a 30-minute meeting tomorrow
-   afternoon." → it offers slots → pick one → show the confirmation card + the
-   event appearing in Google Calendar + the email.
-3. **Memory + change mid-convo (30s):** "Actually make it an hour" → it re-searches
-   keeping the day. Point out the latency badge (< 800 ms).
-4. **Smart parsing (30s):** "Find 45 minutes before my 5 PM meeting on Friday" →
-   show it looking up the event and offering the right window.
-5. **Conflict resolution (25s):** Ask for a fully-booked window → it proposes
-   alternatives instead of failing.
-6. **Reschedule/cancel + history (20s):** "Move it to 4" then "cancel it"; open
-   the History panel.
-
----
-
 ## ⚠️ Limitations (by design, service-account trade-offs)
 
 - **"Created by" on events** shows the service-account email (read-only in the
