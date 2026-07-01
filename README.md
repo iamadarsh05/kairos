@@ -215,17 +215,12 @@ Use **headphones** so the mic doesn't echo the agent's voice.
 
 ---
 
-## ⚠️ Limitations (by design, service-account trade-offs)
+## ⚠️ Notes & trade-offs
 
-- **"Created by" on events** shows the service-account email (read-only in the
-  API). The event still correctly belongs to your calendar. Standard for
-  integration-created events.
-- **Native guest invites** aren't sent by a service account on a personal Gmail
-  (needs Workspace Domain-Wide Delegation), so guests are recorded on the event +
-  emailed via Resend instead.
-- **Resend test mode** delivers only to your own verified address; add a verified
-  domain to email arbitrary guests.
-- **History** is per-browser (localStorage), not synced across devices.
+- **"Created by"** shows the service-account email (read-only in the API); the event still belongs to your calendar.
+- **Guest invites** aren't sent natively (service accounts need Workspace delegation), so guests are added to the event and emailed via Resend.
+- **Resend test mode** emails only your own address until a domain is verified.
+- **History** is stored per-browser (localStorage).
 
 ---
 
