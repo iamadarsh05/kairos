@@ -8,7 +8,7 @@ and books, reschedules, or cancels meetings out loud with low latency.
 
 Built entirely on **free-tier** services.
 
-> **Live demo:** _add your Vercel URL here after deploying_
+> **Live demo:** https://kairos-red-mu.vercel.app
 > **Video walkthrough:** _add your 2–3 min screen recording link here_
 
 ---
