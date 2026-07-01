@@ -23,10 +23,31 @@ export function getConfig() {
         ? process.env.GOOGLE_CALENDAR_ID!
         : ""),
     clientEmail: process.env.GOOGLE_CLIENT_EMAIL || "",
-    // The private key arrives with literal "\n" sequences when stored as a
-    // single-line env var; convert them back to real newlines for the JWT.
-    privateKey: (process.env.GOOGLE_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+    privateKey: parsePrivateKey(process.env.GOOGLE_PRIVATE_KEY || ""),
   };
+}
+
+/**
+ * Normalize a service-account private key from an env var. Handles the common
+ * ways it gets mangled (especially on Vercel/CI):
+ *  - wrapping single or double quotes copied along with the value
+ *  - escaped "\n" (single-line form) OR double-escaped "\\n"
+ *  - stray carriage returns
+ * Returns a valid multi-line PEM so Node's crypto can decode it.
+ */
+function parsePrivateKey(raw: string): string {
+  let key = raw.trim();
+  if (
+    key.length >= 2 &&
+    ((key.startsWith('"') && key.endsWith('"')) ||
+      (key.startsWith("'") && key.endsWith("'")))
+  ) {
+    key = key.slice(1, -1);
+  }
+  return key
+    .replace(/\\r/g, "")
+    .replace(/\\n/g, "\n")
+    .replace(/\r/g, "");
 }
 
 export type AppConfig = ReturnType<typeof getConfig>;
