@@ -1,0 +1,28 @@
+{
+  "name": "smart-scheduler-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Voice-enabled Smart Scheduler AI agent (Gemini Live + Google Calendar)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/genai": "^1.9.0",
+    "googleapis": "^144.0.0",
+    "luxon": "^3.5.0",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
+  }
+}
